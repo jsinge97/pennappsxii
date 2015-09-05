@@ -1,0 +1,21 @@
+html
+    body
+        link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css', rel='stylesheet')
+        link(rel='stylesheet', href='lib/codemirror.css')
+        script(src='lib/codemirror.js')
+        script(src='addon/hint/anyword-hint.js')
+        script(src='addon/edit/matchbrackets.js')
+        link(rel='stylesheet', href='theme/blackboard.css')
+        script(src='mode/javascript/javascript.js')
+
+        section.row
+            textarea#myTextArea.col-md-6.full-height
+
+        script.
+            var myTextArea = document.getElementById('myTextArea');
+            var editor = CodeMirror.fromTextArea(myTextArea, {
+                lineNumbers: true,
+                matchBrackets: true,
+                mode:  "javascript",
+                theme: "blackboard"
+            });
